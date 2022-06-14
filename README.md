@@ -29,3 +29,14 @@ pip install -r requirements.txt
 * `download_mt_rsdtdsp_pos.py` - 全都道府県、全自治体の「住居表示－住居マスター位置参照拡張」データをダウンロードする
 * `download_mt_rsdtdsp_blk.py` - 全都道府県、全自治体の「住居表示・街区マスター」データをダウンロードする
 * `download_mt_rsdtdsp_blk_pos.py` - 全都道府県、全自治体の「住居表示－街区マスター位置参照拡張」データをダウンロードする
+
+## Docker
+
+```shell
+$ docker build -t geolonia/base-registry-tools:latest .
+$ docker run --rm \
+  -v $(pwd):/scripts \
+  -v $(pwd)/out:/out \
+  -it geolonia/base-registry-tools \
+  /scripts/download_mt_rsdtdsp.py # スクリプトを指定
+```
